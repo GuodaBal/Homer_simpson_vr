@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 854d047e8a7c2f148bf2ab05301ffb5f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button
+    second: {fileID: 2100000, guid: 2dc435e77c8402b4c820ca63ca5e3067, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Control Panel
+    second: {fileID: 2100000, guid: 31363b427a67c6d4cacecc0eadc5b6ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Level_
+    second: {fileID: 2100000, guid: f03dd2f9cc92e2b4785d8d722cbd5d38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lever
+    second: {fileID: 2100000, guid: 9fe49d01860ba3c4a9c5c01dd98dd753, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 41888dd8d8f385e4ca819926967e3452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 5014a7b318536bc4eacf11dc8e5126b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2
+    second: {fileID: 2100000, guid: e255b1bbb53ddfb45b467282a2e8cd03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2.001
+    second: {fileID: 2100000, guid: c8df6a12c12360c4197b6de0b53fcbe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2.002
+    second: {fileID: 2100000, guid: 4051fad13d8fdfd4c8efe2058d4bea6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2.003
+    second: {fileID: 2100000, guid: 1f2a75a715be8e04e83bbc36c6adae3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2.004
+    second: {fileID: 2100000, guid: 27049e2693df154458699cd80915215f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel2.005
+    second: {fileID: 2100000, guid: a98df01104ab0444d9ff568efe4360c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar.003
+    second: {fileID: 2100000, guid: 259cedc9a7df5fe4ab8560be4cbd68e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slider
+    second: {fileID: 2100000, guid: 4fb854597b080c343b9d496bdf529c98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beams
+    second: {fileID: 2100000, guid: 6d6bfca6a2f972548b141ca51ea9d60f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button
+    second: {fileID: 2100000, guid: 9fce04bf2344ce044a8fc5d735abcad7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: b2fc4f6fd02cbc14cbb65c2c29c48371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door handle
+    second: {fileID: 2100000, guid: 0999c6474323c4c418dc607152929361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: edges
+    second: {fileID: 2100000, guid: f38eea8454e40cd48aba92fb22a75667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor black
+    second: {fileID: 2100000, guid: b1696155111f9994985b100a89b9f8c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor white
+    second: {fileID: 2100000, guid: 1a9b1e9a7b0af544ca84e4ca26592d8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: 77b9ea762a0a2044992c60fb0045ff7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: volume1
+    second: {fileID: 2100000, guid: 8edad9eefa6dbb543a3456aa375aaf47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: volume3
+    second: {fileID: 2100000, guid: 99d6417d12cc4d14d91ccba28a72f8f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: volume3.001
+    second: {fileID: 2100000, guid: cf528f1b1037afa4082087c6baf551c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls lower
+    second: {fileID: 2100000, guid: c0451b25c8b113942a841365b7da4ceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls upper
+    second: {fileID: 2100000, guid: 66e1d65897bcbaa408b9a8fadf3cc89f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: warning panel
+    second: {fileID: 2100000, guid: fca8f8305aa308748a3a4edc3c01e742, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Button Color
+    second: {fileID: 2800000, guid: 4715fd368c1cd7d468bc645be72a1698, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Button Roughness
+    second: {fileID: 2800000, guid: 3f95a4f45c74df744ad9c223bbce2e2b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Control Panel Color
+    second: {fileID: 2800000, guid: a0fad5adb569edd4eb55df3b24056a0e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cube Color
+    second: {fileID: 2800000, guid: e2714f94b18bf6c449b0ba4c2a0ae746, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lever Color
+    second: {fileID: 2800000, guid: 4a025a18733a3be4d84708d4d7b29110, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lever Normal
+    second: {fileID: 2800000, guid: 5705baa5c62bcdf4fbc615f70fef05bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Material.003 Color
+    second: {fileID: 2800000, guid: ba6922671c23dc4499b3fd3bf9f6c9bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 1 Color
+    second: {fileID: 2800000, guid: ccfe8017a0ba6bd43a7493f7e9ce25e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 1 Metallic
+    second: {fileID: 2800000, guid: a302872dce04b494da47b37c0e0d2e20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 1 Roughness
+    second: {fileID: 2800000, guid: 0f8468321ae35074f99ca20edc03fbb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 2 Color
+    second: {fileID: 2800000, guid: 2ed7841e87d76ee43b6d15f9cd2cf9eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 2 Metallic
+    second: {fileID: 2800000, guid: ff8ffd39d0794ce4a972c74c1f205c22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 2 Roughness
+    second: {fileID: 2800000, guid: 674c76c126c8a7b43ab983d1b5832763, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 3 Color
+    second: {fileID: 2800000, guid: cc31f5639403a434cac44d26d3d567ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 3 Metallic
+    second: {fileID: 2800000, guid: 80b3165031bce68429f4f388aaccffd5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 3 Roughness
+    second: {fileID: 2800000, guid: 66d7e6f94fec29747961c8d462530cad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 4 Color
+    second: {fileID: 2800000, guid: 93b434adf05d3ec4a9d074c3e5b456b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 4 Metallic
+    second: {fileID: 2800000, guid: 4e3335c469b506b4ea6f0858361ae0cb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 4 Roughness
+    second: {fileID: 2800000, guid: ed3f625caf73f0d4dab404671ca95c44, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 5 Color
+    second: {fileID: 2800000, guid: 26cb03e7f39aa3044b8d7ea1e646185a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 5 Metallic
+    second: {fileID: 2800000, guid: 03b684405c31c6749a8092cf027f1e9f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 5 Roughness
+    second: {fileID: 2800000, guid: 29ea37ecc9ca41648a6ead130d02c5af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 Color
+    second: {fileID: 2800000, guid: dbd698f1c91e4434fa10e2112b4a6e9f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 Metallic
+    second: {fileID: 2800000, guid: 3ec1d18494ff7ea4db3cd650b9080299, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Panel2 Roughness
+    second: {fileID: 2800000, guid: b6af18a2395670a4e8c74e83254fa488, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Room Color
+    second: {fileID: 2800000, guid: 70cee6dd393eacf4aabef113d578a0ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Slider Color
+    second: {fileID: 2800000, guid: 8053fab9ae4d5514e8a6cecdc8642ad4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Warning sign Color
+    second: {fileID: 2800000, guid: fc12c24ed9f1ae84c8a98fe05726264e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: door Color
+    second: {fileID: 2800000, guid: 7ae27723f27eb204795715fdb35d47e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: door handle Color
+    second: {fileID: 2800000, guid: c442ae86fe8f10b44a8e8efbe83c0174, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor black Color
+    second: {fileID: 2800000, guid: 55bf251899670ef4892e88854fb106ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor white Color
+    second: {fileID: 2800000, guid: f2c50bf18903f99449c433208fee69d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: roof Color
+    second: {fileID: 2800000, guid: d920e1c8a20c46548a2e4d74273d35f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume1 Color
+    second: {fileID: 2800000, guid: 239534a3a14305a41a438bfbe278205b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume1 Roughness
+    second: {fileID: 2800000, guid: a3dc66e41636de64794635361d138c79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume3 1 Color
+    second: {fileID: 2800000, guid: c98d56fb73288bd4f8843ffa35e8d52a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume3 1 Roughness
+    second: {fileID: 2800000, guid: c477e0f264bab2d4ca09239058f81119, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume3 Color
+    second: {fileID: 2800000, guid: ddbb56ebf2e0fe140814b5772e9333bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: volume3 Roughness
+    second: {fileID: 2800000, guid: 25f45aa23d91ccd4db2af4ced25de529, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: walls Color
+    second: {fileID: 2800000, guid: e7f606470c76be941850b2fe59242aa0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: walls lower Color
+    second: {fileID: 2800000, guid: c9b714c75bc1a1548b58a49d490dbeb7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warning panel Color
+    second: {fileID: 2800000, guid: 2434504a65c3520438201ebbe316b076, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: warning panel Normal
+    second: {fileID: 2800000, guid: 41c10a764139a9846aefab617826ebab, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
