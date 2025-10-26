@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LayerNames:
   - Default
-  - 
-  - 
-  - 
+  - PipeSocket1
+  - PipeSocket2
+  - KeySocket
   - 
   - 
   - 
