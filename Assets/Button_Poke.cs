@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class Button_Poke : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Button_Poke : MonoBehaviour
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactable;
     private bool isFollowing = false;
     private bool isFrozen = false;
+
+    [SerializeField] public UnityEvent OnButtonPressed;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,7 @@ public class Button_Poke : MonoBehaviour
     {
         if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
+            Debug.Log("Start following");
             UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor interactor = (UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)hover.interactorObject;
             isFollowing = true;
             pokeAttachTransform = interactor.attachTransform;
@@ -75,15 +79,44 @@ public class Button_Poke : MonoBehaviour
     {
         if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
+            Debug.Log("Stop following");
             isFollowing = false;
             isFrozen = false;
+            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.9f)
+            {
+                Debug.Log("Button Pressed 0.9 >");
+            }
+            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.5f)
+            {
+                Debug.Log("Button Pressed 0.5 >");
+            }
+            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.3f)
+            {
+                Debug.Log("Button Pressed 0.3 >");
+            }
+            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.9f)
+            {
+                Debug.Log("Button Pressed 0.9 <");
+            }
+            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.5f)
+            {
+                Debug.Log("Button Pressed 0.5 <");
+            }
+            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.3f)
+            {
+                Debug.Log("Button Pressed 0.3 <");
+            }
+
+                //OnButtonPressed?.Invoke();
         }   
     }
-
+    
     public void Freeze(BaseInteractionEventArgs hover)
     {
         if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
+            Debug.Log("Button Pressed");
+            OnButtonPressed?.Invoke();
             isFrozen = true;
         }
     }
