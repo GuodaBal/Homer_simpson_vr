@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -15,6 +16,8 @@ public class LockKey : MonoBehaviour
     public Animator KeyRotation;
     public float delay = 1f;
     private int index = 0;
+
+    [SerializeField] public UnityEvent OnKeyTurned;
 
     public void Update()
     {
@@ -61,6 +64,7 @@ public class LockKey : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
             socket.enabled = true;
             index = -1;
+            OnKeyTurned?.Invoke();
         }
 
     }

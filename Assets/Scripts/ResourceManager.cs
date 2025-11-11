@@ -35,4 +35,12 @@ public class ResourceManager : MonoBehaviour
         cooling_power.SetCurrentValue(cooling);
         electricity_consumption.SetCurrentValue(cooling * 1.5f);
     }
+    public void DumpTrash()
+    {
+        trash.SetCurrentValue(0);
+    }
+    public void ReleasePressure(float amount)
+    {
+        pressure.SetCurrentValue(pressure.GetCurrentValue() - amount);
+    }
 }

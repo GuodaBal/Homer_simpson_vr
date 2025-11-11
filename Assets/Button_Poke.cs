@@ -15,6 +15,8 @@ public class Button_Poke : MonoBehaviour
     public bool resetPosition = true;
     public bool freeze = true;
 
+    [SerializeField] public UnityEvent OnButtonPressed;
+
     private Vector3 initialPosition;
 
     private Vector3 offset;
@@ -24,7 +26,7 @@ public class Button_Poke : MonoBehaviour
     private bool isFollowing = false;
     private bool isFrozen = false;
 
-    [SerializeField] public UnityEvent OnButtonPressed;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -82,32 +84,12 @@ public class Button_Poke : MonoBehaviour
             Debug.Log("Stop following");
             isFollowing = false;
             isFrozen = false;
-            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.9f)
+            if (visualTarget.position.y - initialPosition.y <= 0)
             {
-                Debug.Log("Button Pressed 0.9 >");
+                Debug.Log("Button Pressed");
+                OnButtonPressed?.Invoke();
             }
-            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.5f)
-            {
-                Debug.Log("Button Pressed 0.5 >");
-            }
-            if (visualTarget.position.y - initialPosition.y >= maxDistance * 0.3f)
-            {
-                Debug.Log("Button Pressed 0.3 >");
-            }
-            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.9f)
-            {
-                Debug.Log("Button Pressed 0.9 <");
-            }
-            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.5f)
-            {
-                Debug.Log("Button Pressed 0.5 <");
-            }
-            if (visualTarget.position.y - initialPosition.y <= maxDistance * 0.3f)
-            {
-                Debug.Log("Button Pressed 0.3 <");
-            }
-
-                //OnButtonPressed?.Invoke();
+                
         }   
     }
     

@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HandScanner : MonoBehaviour
 {
     [Header("Settings")]
     public float scanTime = 2f; // Kiek sekundžių reikia laikyti ranką
     public Renderer scannerLight; // (nebūtina) spalvos pasikeitimui
+
+    [SerializeField] public UnityEvent OnHandScanned;
 
     private bool isScanning = false;
     private float timer = 0f;
@@ -58,5 +61,6 @@ public class HandScanner : MonoBehaviour
 
         Debug.Log("Rankos skanavimas baigtas!");
         // čia gali paleisti durų atidarymą, animaciją, garsą ir t.t.
+        OnHandScanned?.Invoke();
     }
 }

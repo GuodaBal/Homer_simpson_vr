@@ -1962,6 +1962,9 @@ MonoBehaviour:
   keyAttachPoint: {fileID: 1542840156}
   KeyRotation: {fileID: 1740494747}
   delay: 1
+  OnKeyTurned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &134693520
 GameObject:
   m_ObjectHideFlags: 0
@@ -15239,9 +15242,9 @@ MonoBehaviour:
   OnButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 525672397}
-        m_TargetAssemblyTypeName: FactoryResource, Assembly-CSharp
-        m_MethodName: increaseResource
+      - m_Target: {fileID: 300296248}
+        m_TargetAssemblyTypeName: ResourceManager, Assembly-CSharp
+        m_MethodName: AddCoalToReactor
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21367,7 +21370,19 @@ MonoBehaviour:
   m_MinAngle: -80
   m_OnLeverActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 300296248}
+        m_TargetAssemblyTypeName: ResourceManager, Assembly-CSharp
+        m_MethodName: DumpTrash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 20
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnLeverDeactivate:
     m_PersistentCalls:
       m_Calls: []
@@ -23971,6 +23986,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandScanner
   scanTime: 2
   scannerLight: {fileID: 7300612932777614981}
+  OnHandScanned:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 300296248}
+        m_TargetAssemblyTypeName: ResourceManager, Assembly-CSharp
+        m_MethodName: ReleasePressure
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &8892442284925706408
 BoxCollider:
   m_ObjectHideFlags: 0
