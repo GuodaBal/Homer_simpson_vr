@@ -30,7 +30,9 @@ public class HandScanner : MonoBehaviour
             // Ranka išėjo – nutraukiam skanavimą
             isScanning = false;
             timer = 0f;
-            if (scannerLight != null)
+            if (scannerLight != null && scannerLight.material.color == Color.green)
+                scannerLight.material.color = Color.gray;
+            else if (scannerLight != null)
                 scannerLight.material.color = Color.red;
         }
     }

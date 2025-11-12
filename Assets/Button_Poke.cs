@@ -24,29 +24,17 @@ public class Button_Poke : MonoBehaviour
 
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactable;
     private bool isFollowing = false;
-    private bool isFrozen = false;
 
-    
-
-    // Start is called before the first frame update
     void Start()
     {
         initialPosition = visualTarget.position;
         interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
         interactable.hoverEntered.AddListener(Follow);
         interactable.hoverExited.AddListener(StopFollowing);
-        if (freeze)
-        {
-            interactable.selectEntered.AddListener(Freeze);
-        }
-        
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        if (isFrozen) return;
         if (isFollowing)
         {
             Vector3 localTargetPosition = visualTarget.InverseTransformPoint(pokeAttachTransform.position + offset);
@@ -68,12 +56,10 @@ public class Button_Poke : MonoBehaviour
     {
         if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
-            Debug.Log("Start following");
             UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor interactor = (UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)hover.interactorObject;
             isFollowing = true;
             pokeAttachTransform = interactor.attachTransform;
             offset = visualTarget.position - pokeAttachTransform.position;
-            isFrozen = false;
         }
     }
 
@@ -81,25 +67,12 @@ public class Button_Poke : MonoBehaviour
     {
         if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
         {
-            Debug.Log("Stop following");
             isFollowing = false;
-            isFrozen = false;
             if (visualTarget.position.y - initialPosition.y <= 0)
             {
-                Debug.Log("Button Pressed");
                 OnButtonPressed?.Invoke();
             }
                 
         }   
-    }
-    
-    public void Freeze(BaseInteractionEventArgs hover)
-    {
-        if (hover.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRPokeInteractor)
-        {
-            Debug.Log("Button Pressed");
-            OnButtonPressed?.Invoke();
-            isFrozen = true;
-        }
     }
 }

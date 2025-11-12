@@ -11,22 +11,24 @@ public class ResourceManager : MonoBehaviour
     public FactoryResource pressure;
     public FactoryResource electricity_consumption;
     public FactoryResource cooling_power;
+    public FactoryResource coal_in_reactor;
 
-    private float coal_in_reactor = 0;
+    float speed = 3.0f;
 
     // Update is called once per frame
     void Update()
     {
-        electricity.SetCurrentValue(coal_in_reactor * 3.0f + steam.GetCurrentValue() - electricity_consumption.GetCurrentValue());
-        temperature.SetCurrentValue(coal_in_reactor * 2.0f - cooling_power.GetCurrentValue());
-        steam.SetIncreaseSpeed(coal_in_reactor * 1.5f);
-        pressure.SetIncreaseSpeed(steam.GetCurrentValue() * 0.2f);
-        trash.SetIncreaseSpeed(coal_in_reactor * 0.1f);
+        electricity.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 3.0f + steam.GetCurrentValue() * 0.5f - electricity_consumption.GetCurrentValue() - 5) / speed);
+        temperature.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 1.5f + steam.GetCurrentValue() * 0.25f - cooling_power.GetCurrentValue()) / speed);
+        steam.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 1.5f - 3.5f) / speed);
+        pressure.SetIncreaseSpeed((steam.GetCurrentValue() * 0.03f) / speed);
+        trash.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 0.6f) / speed);
     }
 
     public void AddCoalToReactor(float amount)
     {
-        coal_in_reactor += amount; 
+        if (coal.GetCurrentValue() < amount) amount = coal.GetCurrentValue();
+        coal_in_reactor.SetCurrentValue(coal_in_reactor.GetCurrentValue() + amount); 
         coal.DecreaseResource(amount);
     }
     public void FanValueChanged(float fan_1, float fan_2, float fan_3)
@@ -42,5 +44,6 @@ public class ResourceManager : MonoBehaviour
     public void ReleasePressure(float amount)
     {
         pressure.SetCurrentValue(pressure.GetCurrentValue() - amount);
+        Debug.Log("Releasing pressure");
     }
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class FactoryResource : MonoBehaviour
 {
-    public string resourceName;
     public float increase_speed;
     public float max_value;
     public float starting_value;
@@ -16,6 +15,14 @@ public class FactoryResource : MonoBehaviour
     void Update()
     {
         current_value += increase_speed * Time.deltaTime;
+        if (current_value > max_value)
+        {
+            current_value = max_value;
+        }
+        if (current_value < 0)
+        {
+            current_value = 0;
+        }
     }
 
     public float GetCurrentValue()
