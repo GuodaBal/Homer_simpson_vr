@@ -95,15 +95,16 @@ public class HandAnimator : MonoBehaviour
         m_animator.SetFloat(m_animParamIndexFlex, grip_state);
 
         //bool triggerCapTarget = triggerValueCap.action.ReadValue<bool>();
-        //if (triggerCapTarget)
-        //{
-        //    triggerCap_state = Mathf.Clamp(triggerCap_state + 1 / anim_frames, 0f, 1f);
-        //}
-        //else
-        //{
-        //    triggerCap_state = Mathf.Clamp(triggerCap_state - 1 / anim_frames, 0f, 1f);
-        //}
-        //m_animator.SetLayerWeight(m_animLayerIndexPoint, 1f - triggerCap_state);
+        if (triggerTarget == 0f)
+        {
+            triggerCap_state = Mathf.Clamp(triggerCap_state - 1 / anim_frames, 0f, 1f);
+            
+        }
+        else
+        {
+            triggerCap_state = Mathf.Clamp(triggerCap_state + 1 / anim_frames, 0f, 1f);
+        }
+        m_animator.SetLayerWeight(m_animLayerIndexPoint, 1f - triggerCap_state);
 
         //bool thumbCapTarget = gripValueCap.action.ReadValue<bool>();
         //if (thumbCapTarget)
