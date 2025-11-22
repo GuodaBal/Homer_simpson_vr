@@ -14,8 +14,12 @@ public class ResourceManager : MonoBehaviour
     public FactoryResource coal_in_reactor;
 
     public GameOver gameOverScreen;
+    public GameObject gameWinScreen;
+
+    public float level_duration = 60.0f;
 
     float speed = 3.0f;
+    bool game_over_triggered = false;
 
     // Update is called once per frame
     void Update()
@@ -26,19 +30,43 @@ public class ResourceManager : MonoBehaviour
         pressure.SetIncreaseSpeed((steam.GetCurrentValue() * 0.03f) / speed);
         trash.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 0.6f) / speed);
 
-        //Game over checks
-        if (temperature.GetCurrentValue() >= temperature.max_value)
+        //Decreasing timer
+        if (!game_over_triggered && level_duration > 0)
         {
-            gameOverScreen.TriggerGameOver("Reactor Overheated!");
+            level_duration -= Time.deltaTime;
+            //Game win check
+            if (level_duration <= 0)
+            {
+                gameWinScreen.SetActive(true);
+            }
+            //Game over checks
+            if (temperature.GetCurrentValue() >= temperature.max_value)
+            {
+                gameOverScreen.TriggerGameOver("Reactor Overheated!");
+                game_over_triggered = true;
+            }
+            else if (pressure.GetCurrentValue() >= pressure.max_value)
+            {
+                gameOverScreen.TriggerGameOver("Reactor Exploded from Excessive Pressure!");
+                game_over_triggered = true;
+            }
+            else if (trash.GetCurrentValue() >= trash.max_value)
+            {
+                gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
+                game_over_triggered = true;
+            }
+            else if (electricity.GetCurrentValue() <= electricity_demand.GetCurrentValue())
+            {
+                gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
+                game_over_triggered = true;
+            }
         }
-        else if (pressure.GetCurrentValue() >= pressure.max_value)
+        //Game win check
+        if (!game_over_triggered && level_duration <= 0)
         {
-            gameOverScreen.TriggerGameOver("Reactor Exploded from Excessive Pressure!");
+            gameWinScreen.SetActive(true);
         }
-        else if (trash.GetCurrentValue() >= trash.max_value)
-        {
-            gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
-        }
+
     }
 
     public void AddCoalToReactor(float amount)

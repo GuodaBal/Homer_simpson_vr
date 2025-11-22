@@ -17,8 +17,8 @@ MonoBehaviour:
   - PipeSocket1
   - PipeSocket2
   - KeySocket
-  - 
-  - 
+  - GrabInteraction
+  - PinchInteraction
   - 
   - 
   - 

@@ -65,6 +65,7 @@ namespace Unity.XRContent.Interaction
             base.OnEnable();
             selectEntered.AddListener(StartGrab);
             selectExited.AddListener(EndGrab);
+
         }
 
         protected override void OnDisable()
