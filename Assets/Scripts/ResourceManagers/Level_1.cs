@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Level_1 : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class Level_1 : MonoBehaviour
     public FactoryResource coal;
     public FactoryResource coal_in_reactor;
 
-    public GameOver gameOverScreen;
-    public GameObject gameWinScreen;
+    public GameOver game_over_screen;
+    public GameObject game_win_screen;
+    [SerializeField]
+    public TextMeshProUGUI time_remaining_text;
 
     public float level_duration = 60.0f;
 
@@ -16,33 +19,29 @@ public class Level_1 : MonoBehaviour
 
     void Start()
     {
-        gameWinScreen.SetActive(false);
+        game_win_screen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        electricity.SetIncreaseSpeed(coal_in_reactor.GetCurrentValue() * 3.0f - 2.0f);
         //Decreasing timer
         if (!game_over_triggered && level_duration > 0)
         {
             level_duration -= Time.deltaTime;
+            time_remaining_text.text = "Time left: " + Mathf.CeilToInt(level_duration).ToString() + "s";
+            electricity.SetIncreaseSpeed(coal_in_reactor.GetCurrentValue() * 2.0f - 2.0f);
             //Game win check
             if (level_duration <= 0)
             {
-                gameWinScreen.SetActive(true);
+                game_win_screen.SetActive(true);
             }
             //Game over checks
             if (electricity.GetCurrentValue() <= electricity_demand.GetCurrentValue() - 10)
             {
-                gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
+                game_over_screen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
                 game_over_triggered = true;
             }
-        }
-        //Game win check
-        if (!game_over_triggered && level_duration <= 0)
-        {
-            gameWinScreen.SetActive(true);
         }
     }
 
