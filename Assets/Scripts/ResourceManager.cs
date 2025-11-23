@@ -55,7 +55,7 @@ public class ResourceManager : MonoBehaviour
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
                 game_over_triggered = true;
             }
-            else if (electricity.GetCurrentValue() <= electricity_demand.GetCurrentValue())
+            else if (electricity.GetCurrentValue() <= electricity_demand.GetCurrentValue() - 10)
             {
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
                 game_over_triggered = true;
