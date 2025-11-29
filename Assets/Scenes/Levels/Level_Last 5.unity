@@ -3315,18 +3315,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 300296248}
-        m_TargetAssemblyTypeName: ResourceManager, Assembly-CSharp
-        m_MethodName: LockdownEverything
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -3743,8 +3731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
   increase_speed: -0.8
   max_value: 100
-  starting_value: 20
-  current_value: 0
+  starting_value: 0
 --- !u!4 &177172648
 Transform:
   m_ObjectHideFlags: 0
@@ -5541,7 +5528,7 @@ Transform:
   m_GameObject: {fileID: 277323959}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.912, y: 0.39, z: 0.425}
+  m_LocalPosition: {x: 3.948, y: 0.377, z: 0.425}
   m_LocalScale: {x: 0.15, y: 0.28, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6419,12 +6406,11 @@ MonoBehaviour:
   coal_in_reactor: {fileID: 177172647}
   water: {fileID: 817343155}
   pipe_manager: {fileID: 1456840976}
-  water_manager: {fileID: 1360374008}
+  wate_manager: {fileID: 1360374008}
   gameOverScreen: {fileID: 1684664631}
   gameWinScreen: {fileID: 1315285853}
   time_remaining_text: {fileID: 2119382718}
-  level_duration: 120
-  speed: 20
+  level_duration: 10
 --- !u!1 &300857608
 GameObject:
   m_ObjectHideFlags: 0
@@ -9205,7 +9191,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2,100
+          m_StringArgument: 2,0
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -9646,7 +9632,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 100
-  current_value: 0
 --- !u!1 &526562725
 GameObject:
   m_ObjectHideFlags: 0
@@ -11845,7 +11830,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 0
-  current_value: 0
 --- !u!1 &720054923
 GameObject:
   m_ObjectHideFlags: 0
@@ -13466,7 +13450,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2,30
+          m_StringArgument: 2,0.6
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -13581,7 +13565,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 0
-  current_value: 0
 --- !u!1 &819257043
 GameObject:
   m_ObjectHideFlags: 0
@@ -13984,7 +13967,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3,0
+          m_StringArgument: 3,1
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -14692,7 +14675,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2,60
+          m_StringArgument: 2,0.3
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -15375,7 +15358,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 0
-  current_value: 0
 --- !u!1 &936135277
 GameObject:
   m_ObjectHideFlags: 0
@@ -16050,7 +16032,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3,30
+          m_StringArgument: 3,0.6
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -19938,7 +19920,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 0
-  current_value: 0
 --- !u!1 &1269395177
 GameObject:
   m_ObjectHideFlags: 0
@@ -21309,7 +21290,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 0
-  current_value: 0
 --- !u!1 &1357093968
 GameObject:
   m_ObjectHideFlags: 0
@@ -21527,7 +21507,7 @@ Transform:
   m_GameObject: {fileID: 1372164290}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.917, y: 0.719, z: 0.412}
+  m_LocalPosition: {x: 3.921, y: 0.719, z: 0.403}
   m_LocalScale: {x: 0.15, y: 0.28, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22176,7 +22156,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3,60
+          m_StringArgument: 3,0.3
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -22462,8 +22442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
   increase_speed: 0
   max_value: 100
-  starting_value: 20
-  current_value: 0
+  starting_value: 50
 --- !u!1 &1390194058
 GameObject:
   m_ObjectHideFlags: 0
@@ -22544,7 +22523,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 100
-  current_value: 0
 --- !u!1 &1393932554
 GameObject:
   m_ObjectHideFlags: 0
@@ -23543,7 +23521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PipeManager
   pipe_socket_1: {fileID: 8743959}
   pipe_socket_2: {fileID: 874150763}
-  are_pipes_dropped: 0
 --- !u!4 &1456840977
 Transform:
   m_ObjectHideFlags: 0
@@ -23754,7 +23731,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1,60
+          m_StringArgument: 1,0.3
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -26181,7 +26158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6984c48aed9a154294088f4265d8478, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3887185075125053422, guid: c6984c48aed9a154294088f4265d8478, type: 3}
@@ -27220,7 +27197,7 @@ Transform:
   m_GameObject: {fileID: 1740494740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 3.772, y: 1.507, z: -0.317}
+  m_LocalPosition: {x: 3.772, y: 1.616, z: -0.447}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -28384,7 +28361,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2,0
+          m_StringArgument: 2,1
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -28609,8 +28586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
   increase_speed: 0
   max_value: 100
-  starting_value: 30
-  current_value: 0
+  starting_value: 50
 --- !u!1 &1859867518
 GameObject:
   m_ObjectHideFlags: 0
@@ -28658,7 +28634,6 @@ MonoBehaviour:
   increase_speed: 0
   max_value: 100
   starting_value: 80
-  current_value: 0
 --- !u!1 &1860391839
 GameObject:
   m_ObjectHideFlags: 0
@@ -28838,7 +28813,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1,0
+          m_StringArgument: 1,1
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -29818,7 +29793,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3,100
+          m_StringArgument: 3,0
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -31017,7 +30992,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2,30
+          m_StringArgument: 2,0.6
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -31753,7 +31728,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1,100
+          m_StringArgument: 1,0
           m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
@@ -34344,7 +34319,7 @@ Transform:
   m_GameObject: {fileID: 8444895144546633472}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.188, y: 0.5, z: 0.07}
+  m_LocalPosition: {x: -0.188, y: 0.5, z: 0.24}
   m_LocalScale: {x: 60, y: 60, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []

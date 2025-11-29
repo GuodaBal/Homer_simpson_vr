@@ -1,26 +1,23 @@
 using UnityEngine;
 using TMPro;
 
-public class Level_1 : MonoBehaviour
+public class Level_2 : MonoBehaviour
 {
     public FactoryResource electricity;
     public FactoryResource electricity_demand;
     public FactoryResource coal;
+    public FactoryResource trash;
     public FactoryResource coal_in_reactor;
 
-    public GameOver game_over_screen;
-    public GameObject game_win_screen;
+    public GameOver gameOverScreen;
+    public GameObject gameWinScreen;
+
     [SerializeField]
     public TextMeshProUGUI time_remaining_text;
 
     public float level_duration = 60.0f;
 
     bool game_over_triggered = false;
-
-    void Start()
-    {
-        game_win_screen.SetActive(false);
-    }
 
     // Update is called once per frame
     void Update()
@@ -30,19 +27,33 @@ public class Level_1 : MonoBehaviour
         {
             level_duration -= Time.deltaTime;
             time_remaining_text.text = "Time left: " + Mathf.CeilToInt(level_duration).ToString() + "s";
+
             electricity.SetIncreaseSpeed(coal_in_reactor.GetCurrentValue() * 2.0f - electricity_demand.GetCurrentValue() * 0.5f);
+            trash.SetIncreaseSpeed(coal_in_reactor.GetCurrentValue() * 1.2f);
+
             //Game win check
             if (level_duration <= 0)
             {
-                game_win_screen.SetActive(true);
+                gameWinScreen.SetActive(true);
             }
             //Game over checks
-            if (electricity.GetCurrentValue() <= electricity_demand.GetCurrentValue() - 10)
+            if (trash.GetCurrentValue() >= trash.max_value)
             {
-                game_over_screen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
+                gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
+                game_over_triggered = true;
+            }
+            else if (electricity.GetCurrentValue() <= 0)
+            {
+                gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
                 game_over_triggered = true;
             }
         }
+        //Game win check
+        if (!game_over_triggered && level_duration <= 0)
+        {
+            gameWinScreen.SetActive(true);
+        }
+
     }
 
     public void AddCoalToReactor(float amount)
@@ -50,5 +61,9 @@ public class Level_1 : MonoBehaviour
         if (coal.GetCurrentValue() < amount) amount = coal.GetCurrentValue();
         coal_in_reactor.SetCurrentValue(coal_in_reactor.GetCurrentValue() + amount);
         coal.DecreaseResource(amount);
+    }
+    public void DumpTrash()
+    {
+        trash.SetCurrentValue(0);
     }
 }

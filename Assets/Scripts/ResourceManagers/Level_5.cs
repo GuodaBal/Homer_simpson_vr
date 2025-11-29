@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ResourceManager : MonoBehaviour
+public class Level_5 : MonoBehaviour
 {
     public FactoryResource electricity;
     public FactoryResource electricity_demand;
@@ -9,7 +9,6 @@ public class ResourceManager : MonoBehaviour
     public FactoryResource coal;
     public FactoryResource trash;
     public FactoryResource steam;
-    public FactoryResource pressure;
     public FactoryResource electricity_consumption;
     public FactoryResource cooling_power;
     public FactoryResource coal_in_reactor;
@@ -34,7 +33,7 @@ public class ResourceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         //Decreasing timer
         if (!game_over_triggered && level_duration > 0)
         {
@@ -46,32 +45,26 @@ public class ResourceManager : MonoBehaviour
                 electricity.SetIncreaseSpeed(0.0f);
                 temperature.SetIncreaseSpeed(0.0f);
                 steam.SetIncreaseSpeed(0.0f);
-                pressure.SetIncreaseSpeed(0.0f);
                 trash.SetIncreaseSpeed(0.0f);
                 return;
             }
-            if (pipe_manager && pipe_manager.are_pipes_dropped)
+            if (pipe_manager.are_pipes_dropped)
             {
                 Debug.Log("Pipes are dropped, no water flow.");
                 water.SetCurrentValue(0);
             }
-            else if (water)
+            else
             {
                 Debug.Log("Current water flow - " + water_manager.GetTotalWaterFlow());
                 water.SetCurrentValue(water_manager.GetTotalWaterFlow());
             }
-            electricity.SetIncreaseSpeed(GetElectricityIncrease()/speed);
-            if (temperature)
-                temperature.SetIncreaseSpeed(GetTemperatureIncrease() / speed);
-            if (steam)
-                steam.SetIncreaseSpeed(GetSteamIncrease() / speed);
-            if (pressure)
-                pressure.SetIncreaseSpeed(GetPressureIncrease() / speed);
-            if (trash)
-                trash.SetIncreaseSpeed(GetPressureIncrease() / speed);
-            
+            electricity.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 3.0f + steam.GetCurrentValue() * 0.5f - electricity_consumption.GetCurrentValue() * 0.5f - water.GetCurrentValue() * 0.2f - electricity_demand.GetCurrentValue() * 0.7f) / speed);
+            temperature.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 2.5f + steam.GetCurrentValue() * 0.5f - cooling_power.GetCurrentValue() - water.GetCurrentValue() * 3.0f) / speed);
+            steam.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 1.5f - 3.5f) / speed);
+            trash.SetIncreaseSpeed((coal_in_reactor.GetCurrentValue() * 1.2f) / speed);
 
-            if (pipe_manager && Random.Range(0, 50000) <=  water.GetCurrentValue())
+
+            if (Random.Range(0, 50000) <= water.GetCurrentValue())
             {
                 Debug.Log("Dropping Pipes");
                 pipe_manager.DropPipes();
@@ -82,17 +75,12 @@ public class ResourceManager : MonoBehaviour
                 gameWinScreen.SetActive(true);
             }
             //Game over checks
-            if (temperature && temperature.GetCurrentValue() >= temperature.max_value)
+            if (temperature.GetCurrentValue() >= temperature.max_value)
             {
                 gameOverScreen.TriggerGameOver("Reactor Overheated!");
                 game_over_triggered = true;
             }
-            else if (pressure && pressure.GetCurrentValue() >= pressure.max_value)
-            {
-                gameOverScreen.TriggerGameOver("Reactor Exploded from Excessive Pressure!");
-                game_over_triggered = true;
-            }
-            else if (trash && trash.GetCurrentValue() >= trash.max_value)
+            else if (trash.GetCurrentValue() >= trash.max_value)
             {
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
                 game_over_triggered = true;
@@ -127,11 +115,6 @@ public class ResourceManager : MonoBehaviour
     {
         trash.SetCurrentValue(0);
     }
-    public void ReleasePressure(float amount)
-    {
-        pressure.SetCurrentValue(pressure.GetCurrentValue() - amount);
-        Debug.Log("Releasing pressure");
-    }
     public void LockdownEverything(float timer)
     {
         if (lockdown_used) return;
@@ -144,53 +127,4 @@ public class ResourceManager : MonoBehaviour
         is_lockdown = false;
         Debug.Log("Lockdown ended.");
     }
-
-
-    //Resource calcluation functions
-    float GetElectricityIncrease()
-    {
-        float increase = coal_in_reactor.GetCurrentValue() * 3.0f - electricity_demand.GetCurrentValue() * 0.7f;
-        if (steam)
-        {
-            increase += steam.GetCurrentValue() * 0.5f;
-        }
-        if (electricity_consumption)
-        {
-            increase -= electricity_consumption.GetCurrentValue() * 0.5f;
-        }
-        if (water)
-        {
-            increase -= water.GetCurrentValue() * 0.2f;
-        }
-        return increase;
-    }
-    float GetTemperatureIncrease()
-    {
-        float increase = coal_in_reactor.GetCurrentValue() * 2.5f - cooling_power.GetCurrentValue();
-        if (steam)
-        {
-            increase += steam.GetCurrentValue() * 0.5f;
-        }
-        if (water)
-        {
-            increase -= water.GetCurrentValue() * 3.0f;
-        }
-        return increase;
-    }
-    float GetSteamIncrease()
-    {
-        float increase = coal_in_reactor.GetCurrentValue() * 1.5f - 3.5f;
-        return increase;
-    }
-    float GetPressureIncrease()
-    {
-        float increase = steam.GetCurrentValue() * 0.03f;
-        return increase;
-    }
-    float GetTrashIncrease()
-    {
-        float increase = coal_in_reactor.GetCurrentValue() * 1.2f;
-        return increase;
-    }
-
 }

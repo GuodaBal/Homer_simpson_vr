@@ -5,7 +5,7 @@ public class FactoryResource : MonoBehaviour
     public float increase_speed;
     public float max_value;
     public float starting_value;
-    private float current_value;
+    public float current_value;
 
     void Start()
     {
