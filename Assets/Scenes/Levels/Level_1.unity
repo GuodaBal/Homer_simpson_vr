@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
   increase_speed: -2
   max_value: 100
-  starting_value: 0
+  starting_value: 10
   current_value: 0
 --- !u!4 &177172648
 Transform:
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   gameWinScreen: {fileID: 1315285853}
   time_remaining_text: {fileID: 2022756463}
   level_duration: 60
-  speed: 10
+  speed: 1
 --- !u!1 &300857608
 GameObject:
   m_ObjectHideFlags: 0
@@ -10748,7 +10748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
   increase_speed: 0
   max_value: 100
-  starting_value: 80
+  starting_value: 40
   current_value: 0
 --- !u!1 &1865877068
 GameObject:
