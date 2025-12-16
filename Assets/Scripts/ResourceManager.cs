@@ -24,9 +24,22 @@ public class ResourceManager : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI time_remaining_text;
 
+
+
     public float level_duration = 60.0f;
 
     public float speed = 1.0f;
+
+    [SerializeField]
+    AudioClip[] audioClips;
+
+    private Transform transform;
+    [SerializeField]
+    private Transform outsideTransform;
+
+    [SerializeField]
+    private Transform pipeTransform;
+
     bool game_over_triggered = false;
     bool is_lockdown = false;
     bool lockdown_used = false;
@@ -61,6 +74,7 @@ public class ResourceManager : MonoBehaviour
             else if (water)
             {
                 water.SetCurrentValue(water_manager.GetTotalWaterFlow());
+
             }
             electricity.SetIncreaseSpeed(GetElectricityIncrease() * speed);
             if (temperature)
@@ -76,31 +90,40 @@ public class ResourceManager : MonoBehaviour
             if (pipe_manager && Random.Range(0, 100000) <=  water.GetCurrentValue())
             {
                 Debug.Log("Dropping Pipes");
-                pipe_manager.DropPipes();
+                if (pipe_manager.are_pipes_dropped == false)
+                {
+                    pipe_manager.DropPipes();
+                    AudioManager.instance.PlaySoundEffect(audioClips[8], pipeTransform, 1f, 1f);
+                }
             }
             //Game win check
             if (level_duration <= 0)
             {
+                AudioManager.instance.PlaySoundEffect(audioClips[4], transform, 1f, 1f);
                 gameWinScreen.SetActive(true);
             }
             //Game over checks
             if (temperature && temperature.GetCurrentValue() >= temperature.max_value)
             {
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
                 gameOverScreen.TriggerGameOver("Reactor Overheated!");
                 game_over_triggered = true;
             }
             else if (pressure && pressure.GetCurrentValue() >= pressure.max_value)
             {
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
                 gameOverScreen.TriggerGameOver("Reactor Exploded from Excessive Pressure!");
                 game_over_triggered = true;
             }
             else if (trash && trash.GetCurrentValue() >= trash.max_value)
             {
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
                 game_over_triggered = true;
             }
             else if (electricity.GetCurrentValue() <= 0)
             {
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
                 game_over_triggered = true;
             }
@@ -108,6 +131,7 @@ public class ResourceManager : MonoBehaviour
         //Game win check
         if (!game_over_triggered && level_duration <= 0)
         {
+
             gameWinScreen.SetActive(true);
             electricity.SetIncreaseSpeed(0.0f);
             if (temperature)
@@ -121,6 +145,7 @@ public class ResourceManager : MonoBehaviour
         }
         if (game_over_triggered)
         {
+
             electricity.SetIncreaseSpeed(0.0f);
             if (temperature)
                 temperature.SetIncreaseSpeed(0.0f);
@@ -133,15 +158,23 @@ public class ResourceManager : MonoBehaviour
         }
 
      }
-
+    public void SetTransformTo(Transform tr)
+    {
+        transform = tr;
+    }
     public void AddCoalToReactor(float amount)
     {
         if (coal.GetCurrentValue() < amount) amount = coal.GetCurrentValue();
         coal_in_reactor.SetCurrentValue(coal_in_reactor.GetCurrentValue() + amount);
         coal.DecreaseResource(amount);
+        AudioManager.instance.PlaySoundEffect(audioClips[0], transform, 1f, 1f);
+        
+        AudioManager.instance.PlaySoundEffect(audioClips[1], outsideTransform, 1f, Random.Range(0.9f, 1.1f));
+
     }
     public void FanValueChanged(float fan_1, float fan_2, float fan_3)
     {
+
         float cooling = (fan_1 + fan_2 + fan_3) / 3 * 100;
         cooling_power.SetCurrentValue(cooling);
         electricity_consumption.SetCurrentValue(cooling * 1.5f);
@@ -149,6 +182,8 @@ public class ResourceManager : MonoBehaviour
     public void DumpTrash()
     {
         trash.SetCurrentValue(0);
+        AudioManager.instance.PlaySoundEffect(audioClips[0], transform, 1f, 1f);
+        AudioManager.instance.PlaySoundEffect(audioClips[6], outsideTransform, 1f, Random.Range(0.9f, 1.1f));
     }
     public void ReleasePressure(float amount)
     {

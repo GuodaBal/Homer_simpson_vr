@@ -5,6 +5,12 @@ public class WaterManger : MonoBehaviour
     float pump_1_speed = 30f;
     float pump_2_speed = 30f;
     float pump_3_speed = 30f;
+
+    [SerializeField]
+    AudioClip audio;
+
+    [SerializeField]
+    Transform trans;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +42,7 @@ public class WaterManger : MonoBehaviour
             pump_3_speed = speed;
         }
         Debug.Log("Pump Speeds: " + pump_1_speed + ", " + pump_2_speed + ", " + pump_3_speed);
+        AudioManager.instance.PlaySoundEffect(audio, trans, 1f, Random.RandomRange(0.8f, 1.2f));
     }
 
     public float GetTotalWaterFlow()

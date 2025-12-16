@@ -6,9 +6,16 @@ public class HandScanner : MonoBehaviour
 {
     [Header("Settings")]
     public float scanTime = 2f; // Kiek sekundžių reikia laikyti ranką
-    public Renderer scannerLight; // (nebūtina) spalvos pasikeitimui
+    public Renderer scannerLight; 
 
     [SerializeField] public UnityEvent OnHandScanned;
+
+    [SerializeField]
+    AudioClip[] Scanner;
+
+    private AudioSource AS;
+    [SerializeField]
+    Transform trans;
 
     private bool isScanning = false;
     private float timer = 0f;
@@ -33,7 +40,11 @@ public class HandScanner : MonoBehaviour
             if (scannerLight != null && scannerLight.material.color == Color.green)
                 scannerLight.material.color = Color.gray;
             else if (scannerLight != null)
+            {
                 scannerLight.material.color = Color.red;
+                Destroy(AS);
+                AudioManager.instance.PlaySoundEffect(Scanner[2], trans, 1f, 1f);
+            }
         }
     }
 
@@ -42,6 +53,7 @@ public class HandScanner : MonoBehaviour
         timer = 0f;
         if (scannerLight != null)
             scannerLight.material.color = Color.yellow;
+        AS = AudioManager.instance.PlaySoundEffectWithReturn(Scanner[0], trans, 1f, 1f);
 
         while (isScanning && timer < scanTime)
         {
@@ -60,7 +72,7 @@ public class HandScanner : MonoBehaviour
         isScanning = false;
         if (scannerLight != null)
             scannerLight.material.color = Color.green;
-
+        AudioManager.instance.PlaySoundEffect(Scanner[1], trans, 1f, 1f);
         Debug.Log("Rankos skanavimas baigtas!");
         // čia gali paleisti durų atidarymą, animaciją, garsą ir t.t.
         OnHandScanned?.Invoke();

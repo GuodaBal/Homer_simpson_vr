@@ -8,6 +8,8 @@ public class PipeManager : MonoBehaviour
     public GameObject pipe_socket_1;
     public GameObject pipe_socket_2;
 
+
+
     float drop_duration = 0.0f;
     int pipes_placed = 2;
     public bool are_pipes_dropped = false;
@@ -42,6 +44,7 @@ public class PipeManager : MonoBehaviour
 
     public void DropPipes()
     {
+
         pipe_socket_1.SetActive(false);
         pipe_socket_2.SetActive(false);
         drop_duration = 0.5f;

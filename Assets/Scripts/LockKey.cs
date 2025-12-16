@@ -19,6 +19,9 @@ public class LockKey : MonoBehaviour
 
     [SerializeField] public UnityEvent OnKeyTurned;
 
+    [SerializeField]
+    AudioClip audio;
+    
     public void Update()
     {
         if (keyGrab.isSelected)
@@ -52,15 +55,17 @@ public class LockKey : MonoBehaviour
         if (index == 1)
         {
             Rigidbody rb = keyGrab.GetComponent<Rigidbody>();
-            
+
             // Palaukiame vieną frame, kol XR snap baigs pozicionuoti objektą
             yield return new WaitForSeconds(delay);
+            AudioManager.instance.PlaySoundEffect(audio, keyAttachPoint, 1f, 1f);
             socket.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePosition;
             KeyRotation.enabled = true;
             // Dabar saugiai paleidžiame animaciją
             KeyRotation.SetTrigger("IsInserted");
             yield return new WaitForSeconds( 1.5f);
+
             rb.constraints = RigidbodyConstraints.None;
             socket.enabled = true;
             index = -1;
