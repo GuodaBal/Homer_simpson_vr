@@ -2993,6 +2993,9 @@ MonoBehaviour:
   - {fileID: 484630788}
   - {fileID: 1930214767}
   - {fileID: 1474199807}
+  buttonVisualsGroup: []
+  material_off: {fileID: 0}
+  material_on: {fileID: 0}
 --- !u!1 &125172041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,6 +3406,7 @@ MonoBehaviour:
   OnKeyTurned:
     m_PersistentCalls:
       m_Calls: []
+  audio: {fileID: 0}
 --- !u!1 &134693520
 GameObject:
   m_ObjectHideFlags: 0
@@ -6422,9 +6426,13 @@ MonoBehaviour:
   water_manager: {fileID: 1360374008}
   gameOverScreen: {fileID: 1684664631}
   gameWinScreen: {fileID: 1315285853}
+  levelClearedScreen: {fileID: 0}
   time_remaining_text: {fileID: 2119382718}
   level_duration: 120
   speed: 20
+  audioClips: []
+  outsideTransform: {fileID: 0}
+  pipeTransform: {fileID: 0}
 --- !u!1 &300857608
 GameObject:
   m_ObjectHideFlags: 0
@@ -21407,6 +21415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e6c3f4fd5ada743a11420f8ae596de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  audio: {fileID: 0}
+  trans: {fileID: 0}
 --- !u!4 &1360374009
 Transform:
   m_ObjectHideFlags: 0
@@ -30872,6 +30882,9 @@ MonoBehaviour:
   slider1: {fileID: 1646140983}
   slider2: {fileID: 1397692013}
   slider3: {fileID: 1402846547}
+  fan1: {fileID: 0}
+  fan2: {fileID: 0}
+  fan3: {fileID: 0}
 --- !u!4 &1991767795
 Transform:
   m_ObjectHideFlags: 0
@@ -34239,11 +34252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.425
+      value: 5.38
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.418
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36285,6 +36298,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Scanner: []
+  trans: {fileID: 0}
 --- !u!65 &8892442284925706408
 BoxCollider:
   m_ObjectHideFlags: 0

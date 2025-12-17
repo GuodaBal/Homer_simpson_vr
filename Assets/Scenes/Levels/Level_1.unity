@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7832eb9c8d7a235458dd75003bd4046b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FactoryResource
-  increase_speed: -2
+  increase_speed: -1.5
   max_value: 100
   starting_value: 10
   current_value: 0

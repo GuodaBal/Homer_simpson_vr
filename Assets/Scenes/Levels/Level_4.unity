@@ -22825,7 +22825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f8f85d2b54a684aa0d7b7de3b94a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartLevel
-  Manager: {fileID: 0}
+  Manager: {fileID: 300296245}
 --- !u!114 &1592084939
 MonoBehaviour:
   m_ObjectHideFlags: 0
