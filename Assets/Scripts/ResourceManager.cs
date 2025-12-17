@@ -20,6 +20,7 @@ public class ResourceManager : MonoBehaviour
 
     public GameOver gameOverScreen;
     public GameObject gameWinScreen;
+    public LevelCleared levelClearedScreen;
 
     [SerializeField]
     public TextMeshProUGUI time_remaining_text;
@@ -101,30 +102,35 @@ public class ResourceManager : MonoBehaviour
             {
                 AudioManager.instance.PlaySoundEffect(audioClips[4], transform, 1f, 1f);
                 gameWinScreen.SetActive(true);
+                levelClearedScreen.TriggerWin();
             }
             //Game over checks
             if (temperature && temperature.GetCurrentValue() >= temperature.max_value)
             {
-                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 0.7f, 1f);
                 gameOverScreen.TriggerGameOver("Reactor Overheated!");
+                levelClearedScreen.TriggerGameOver();
                 game_over_triggered = true;
             }
             else if (pressure && pressure.GetCurrentValue() >= pressure.max_value)
             {
-                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 0.7f, 1f);
                 gameOverScreen.TriggerGameOver("Reactor Exploded from Excessive Pressure!");
+                levelClearedScreen.TriggerGameOver();
                 game_over_triggered = true;
             }
             else if (trash && trash.GetCurrentValue() >= trash.max_value)
             {
-                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 0.7f, 1f);
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to Excessive Trash!");
+                levelClearedScreen.TriggerGameOver();
                 game_over_triggered = true;
             }
             else if (electricity.GetCurrentValue() <= 0)
             {
-                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 1f, 1f);
+                AudioManager.instance.PlaySoundEffect(audioClips[5], gameWinScreen.transform, 0.7f, 1f);
                 gameOverScreen.TriggerGameOver("Factory Shut Down due to not meeting Demand for Electricity!");
+                levelClearedScreen.TriggerGameOver();
                 game_over_triggered = true;
             }
         }

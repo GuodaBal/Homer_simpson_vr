@@ -10,6 +10,11 @@ public class SceneLoader : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
+    public void SwitchScene(int sceneIndex)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
